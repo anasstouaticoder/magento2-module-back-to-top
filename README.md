@@ -60,13 +60,11 @@ Enabling display override value of sub scopes : `bin/magento config:set 'anassto
 
 ## Specifications
 
-This plugin provides easy way to copy configuration field paths or its value to the clipboard. It also displays all values configured in sub scopes websites or in a modal.
-
-For copying value and displaying sub values in modal parts, both support these field types : [text, textarea, select, and multiselect]()
+This module provides a shortcut for customer to go back to the top of the page especially if your magento instance doesnt have sticky header or the pages are too long 
 
 ## Usage
 
-The idea behind this plugin is to make admins and developers lives much easier, instead of them searching inside the page DOM using inspect tool or in Project files, the plugin is providing them a shortcut to  path configuration and copy button to clipboard.
+the purpose of this module is to add back to top shortcut in magento pages
 [See plugin wiki](https://github.com/anasstouaticoder/magento2-module-back-to-top/wiki/Project-Demo)
 
 ## License
