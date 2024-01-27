@@ -1,0 +1,29 @@
+.go-top {
+    cursor: pointer;
+    font: 12px Arial;
+    text-align: center;
+    z-index: 2222;
+    -moz-transition: opacity 0.2s linear;
+    -o-transition: opacity 0.2s linear;
+    -webkit-transition: opacity 0.2s linear;
+    transition: opacity 0.2s linear;
+    right: 1em;
+    bottom: 2em;
+    color: #FAFAFA;
+    text-decoration: none;
+    background: #F44336;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    position: fixed;
+}
+
+.go-top.fadein {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=2);
+    opacity: 1;
+}
+
+.go-top.fadeout {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Copyright (c) 2023
+ * MIT License
+ * Module AnassTouatiCoder_BackToTop
+ * Author Anass TOUATI anass1touati@gmail.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="AnassTouatiCoder_BackToTop">
+        <sequence>
+            <module name="AnassTouatiCoder_Base"/>
+        </sequence>
+    </module>
+</config>

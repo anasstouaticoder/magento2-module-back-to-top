@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Copyright (c) 2023
+ * MIT License
+ * Module AnassTouatiCoder_BackToTop
+ * Author Anass TOUATI anass1touati@gmail.com
+ */
+-->
+<config>
+    <default>
+        <back_to_top>
+            <display>
+                <label_color>#FAFAFA</label_color>
+                <background_color>#F44336</background_color>
+                <border_color>#e0e0e0</border_color>
+                <position>bottom-left</position>
+            </display>
+        </back_to_top>
+    </default>
+</config>

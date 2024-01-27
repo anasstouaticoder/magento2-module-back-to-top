@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright (c) 2023
+ * MIT License
+ * Module AnassTouatiCoder_ReferrerTracker
+ * Author Anass TOUATI anass1touati@gmail.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="back_to_top" translate="label" type="text" sortOrder="100"
+                 showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Back To Top</label>
+            <tab>anass_Touati_coder</tab>
+            <resource>AnassTouatiCoder_BackToTop::anasstouaticoder_backtotop</resource>
+            <group id="general" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>General</label>
+                <field id="enabled" translate="label" type="select" sortOrder="5" showInDefault="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="display" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Display</label>
+                <field id="label" translate="label comment" type="text" sortOrder="5" showInDefault="1" canRestore="1">
+                    <label>Label</label>
+                    <comment>Text will be displayed in go to top button</comment>
+                </field>
+                <field id="label_color" translate="label,comment" type="text" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Label Color</label>
+                    <frontend_model>AnassTouatiCoder\Base\Block\Adminhtml\Form\ColorPicker</frontend_model>
+                    <comment>You can customize label color</comment>
+                </field>
+                <field id="background_color" translate="label,comment" type="text" sortOrder="15" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Background Color</label>
+                    <frontend_model>AnassTouatiCoder\Base\Block\Adminhtml\Form\ColorPicker</frontend_model>
+                    <comment>You can customize background color</comment>
+                </field>
+                <field id="border_color" translate="label,comment" type="text" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Border Color</label>
+                    <frontend_model>AnassTouatiCoder\Base\Block\Adminhtml\Form\ColorPicker</frontend_model>
+                    <comment>You can customize border color</comment>
+                </field>
+                <field id="position" translate="label comment" type="select" sortOrder="40" showInDefault="1">
+                    <label><![CDATA[<strong>Position</strong>]]></label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

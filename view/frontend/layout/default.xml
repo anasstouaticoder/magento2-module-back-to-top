@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright (c) 2023
+ * MIT License
+ * Module AnassTouatiCoder_BackToTop
+ * Author Anass TOUATI anass1touati@gmail.com
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="AnassTouatiCoder_BackToTop::css/back_to_top.css"/>
+    </head>
+    <body>
+        <referenceContainer name="before.body.end">
+            <container name="atouati.backtotop" htmlTag="div" htmlId="atouati-backtotop">
+                <block class="Magento\Framework\View\Element\Template" name="atouati.backtotop.content"
+                       template="AnassTouatiCoder_BackToTop::html/back_to_top.phtml"/>
+            </container>
+        </referenceContainer>
+    </body>
+</page>
