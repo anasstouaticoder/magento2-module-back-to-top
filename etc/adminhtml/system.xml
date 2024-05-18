@@ -18,7 +18,8 @@
             <group id="general" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1"
                    showInStore="1">
                 <label>General</label>
-                <field id="enabled" translate="label" type="select" sortOrder="5" showInDefault="1">
+                <field id="enabled" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1"
+                       showInStore="1" canRestore="1">
                     <label>Enable</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
@@ -26,30 +27,55 @@
             <group id="display" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1"
                    showInStore="1">
                 <label>Display</label>
-                <field id="label" translate="label comment" type="text" sortOrder="5" showInDefault="1" canRestore="1">
+                <field id="label" translate="label comment" type="text" sortOrder="5" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Label</label>
                     <comment>Text will be displayed in go to top button</comment>
                 </field>
                 <field id="label_color" translate="label,comment" type="text" sortOrder="10" showInDefault="1"
-                       showInWebsite="1" showInStore="1">
+                       showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Label Color</label>
                     <frontend_model>AnassTouatiCoder\Base\Block\Adminhtml\Form\ColorPicker</frontend_model>
                     <comment>You can customize label color</comment>
                 </field>
                 <field id="background_color" translate="label,comment" type="text" sortOrder="15" showInDefault="1"
-                       showInWebsite="1" showInStore="1">
+                       showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Background Color</label>
                     <frontend_model>AnassTouatiCoder\Base\Block\Adminhtml\Form\ColorPicker</frontend_model>
                     <comment>You can customize background color</comment>
                 </field>
                 <field id="border_color" translate="label,comment" type="text" sortOrder="20" showInDefault="1"
-                       showInWebsite="1" showInStore="1">
+                       showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Border Color</label>
                     <frontend_model>AnassTouatiCoder\Base\Block\Adminhtml\Form\ColorPicker</frontend_model>
                     <comment>You can customize border color</comment>
                 </field>
-                <field id="position" translate="label comment" type="select" sortOrder="40" showInDefault="1">
+                <field id="position" translate="label comment" type="select" sortOrder="40" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
                     <label><![CDATA[<strong>Position</strong>]]></label>
+                    <source_model>AnassTouatiCoder\BackToTop\Model\Config\Source\Position</source_model>
+                </field>
+            </group>
+            <group id="pages" translate="label" type="text" sortOrder="150" showInDefault="1" showInWebsite="1"
+                   showInStore="1" canRestore="1">
+                <label>Target Pages</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="5" showInDefault="1">
+                    <label>Enable in all pages</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>either enable the functionality in all pages or a specific pages</comment>
+                </field>
+                <field id="include_page" translate="label,comment"
+                       type="AnassTouatiCoder\Base\Block\Adminhtml\Form\MultiSelectChooser" sortOrder="5"
+                       showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable in specific pages</label>
+                    <source_model>AnassTouatiCoder\BackToTop\Model\Config\Source\Page</source_model>
+                    <can_be_empty>1</can_be_empty>
+                    <depends>
+                        <field id="enabled">0</field>
+                    </depends>
+                    <comment><![CDATA[
+                    <p>To include specific pages</p>
+                    ]]></comment>
                 </field>
             </group>
         </section>

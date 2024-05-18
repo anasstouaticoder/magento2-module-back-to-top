@@ -1,10 +1,13 @@
 {
     "name": "anasstouaticoder/magento2-module-backtotop",
-    "description": "Back To Top module gives the customer more control to page display by providing the ability to return to the top of the page, the module is compatible with luma and Hyva themes .",
+    "description": "The Back To Top module enhances user control over page navigation by providing an easy way to return to the top of the page. This module is compatible with Luma, Hyva, and other Magento themes.",
     "keywords": [
         "magento 2",
         "back office",
-        "back to top"
+        "back to top",
+        "shortcut",
+        "widget",
+        "frontend component"
     ],
     "authors": [
         {
@@ -17,10 +20,10 @@
     "require": {
         "anasstouaticoder/magento2-module-base": "^1",
         "magento/framework": "*",
-        "php": "~7.0||~7.1||~7.2||~7.3||~7.4.0||~8.1||~8.2"
+        "php": "~7.4.0||~8.1||~8.2"
     },
     "type": "magento2-module",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "license": [

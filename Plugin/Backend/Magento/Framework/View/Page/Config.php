@@ -27,15 +27,26 @@ class Config
     private $assetRepository;
 
     /**
+     * Construct
+     *
      * @param RequestInterface $request
+     * @param Repository $assetRepository
      */
     public function __construct(RequestInterface $request, Repository $assetRepository)
     {
         $this->request = $request;
         $this->assetRepository = $assetRepository;
     }
+
+    /**
+     * Add page Asset plugin after
+     *
+     * @param MagentoConfig $subject
+     * @param MagentoConfig $result
+     * @return MagentoConfig
+     */
     public function afterAddPageAsset(
-        \Magento\Framework\View\Page\Config $subject,
+        MagentoConfig $subject,
         $result
     ) {
         return $result;
@@ -45,7 +56,7 @@ class Config
      * Add colorPicker css asset to Back to top section only
      *
      * @param MagentoConfig $subject
-     * @param $result
+     * @param array|string $result
      * @return mixed|void
      * @throws LocalizedException
      */

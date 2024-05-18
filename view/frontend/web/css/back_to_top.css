@@ -7,8 +7,6 @@
     -o-transition: opacity 0.2s linear;
     -webkit-transition: opacity 0.2s linear;
     transition: opacity 0.2s linear;
-    right: 1em;
-    bottom: 2em;
     color: #FAFAFA;
     text-decoration: none;
     background: #F44336;

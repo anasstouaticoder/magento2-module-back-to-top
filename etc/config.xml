@@ -9,13 +9,37 @@
 -->
 <config>
     <default>
+        <execlude_custom_pages>
+            <table_config><![CDATA[anasstouaticoder_back_to_top/general/execlude_custom_pages]]></table_config>
+            <field_list>
+                <item1>
+                    <name>full_action_name</name>
+                    <type>text</type>
+                    <label><![CDATA[Full Action Name]]></label>
+                    <required>1</required>
+                </item1>
+                <item1>
+                    <name>page_type</name>
+                    <type>text</type>
+                    <label><![CDATA[Page Type]]></label>
+                    <required>2</required>
+                </item1>
+            </field_list>
+            <field_name>custom pages to exclude</field_name>
+        </execlude_custom_pages>
         <back_to_top>
+            <general><enabled>1</enabled></general>
             <display>
+                <label>Back to top</label>
                 <label_color>#FAFAFA</label_color>
                 <background_color>#F44336</background_color>
                 <border_color>#e0e0e0</border_color>
-                <position>bottom-left</position>
+                <position>bottom-right</position>
             </display>
+            <pages>
+                <enabled>1</enabled>
+                <include_page></include_page>
+            </pages>
         </back_to_top>
     </default>
 </config>

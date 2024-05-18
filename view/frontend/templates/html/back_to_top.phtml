@@ -6,32 +6,17 @@
  * Author Anass TOUATI anass1touati@gmail.com
  */
 use Magento\Framework\Escaper;
-use Magento\Framework\View\Element\Template;
+use AnassTouatiCoder\BackToTop\Block\BackToTop;
 
-/** @var Template $block */
+/** @var BackToTop $block */
 /** @var Escaper $escaper */
+//echo $block->getConfigData();exit;
 ?>
-<span id="backToTop-component" class="go-top fadeout" style="">
-    <span class="backToTop-decoration"></span>
-    <?= $escaper->escapeHtml('Back to top') ?>
-</span>
-
-<script>
-    {
-        document.querySelector('#backToTop-component').addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        });
-
-        window.addEventListener('scroll', function(e) {
-            var backToTop = document.querySelector('#backToTop-component');
-            if (window.scrollY > 150) {
-                backToTop.classList.remove('fadeout')
-                backToTop.classList.add('fadein')
-            } else {
-                backToTop.classList.remove('fadein')
-                backToTop.classList.add('fadeout')
-            }
-        });
-    }
-</script>
+<?php if ($block->getIsEnabledInPage()): ?>
+    <span id="backToTop-component" class="go-top fadeout" style="display: none">
+        <span class="backToTop-decoration"></span>
+    </span>
+    <script>
+        window.backToTopConfig = <?= /** No escape we are sending JSON object */$block->getConfigData() ?>;
+    </script>
+<?php endif;?>

@@ -10,33 +10,43 @@ declare(strict_types=1);
 namespace AnassTouatiCoder\BackToTop\Model;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
+use Magento\Framework\Serialize\Serializer\Json;
 use Magento\Store\Model\ScopeInterface;
 
 class Config
 {
-    public const XML_PATH_LABEL_COLOR = 'back_to_top/display/label_color';
-    public const XML_PATH_BACKGROUND_COLOR = 'back_to_top/display/background_color';
-    public const XML_PATH_BORDER_COLOR = 'back_to_top/display/border_color';
-    public const XML_PATH_POSITION = 'back_to_top/display/position';
+    private const XML_PATH_BACK_TO_TOP = 'back_to_top';
     /**
      * @var ScopeConfigInterface
      */
     protected ScopeConfigInterface $scopeConfig;
+    /**
+     * @var Json
+     */
+    protected Json $json;
+    /**
+     * @var array
+     */
+    protected array $configData = [];
 
     /**
      * @param ScopeConfigInterface $scopeConfig
+     * @param Json $json
      */
-    public function __construct(ScopeConfigInterface $scopeConfig, )
+    public function __construct(ScopeConfigInterface $scopeConfig, Json $json)
     {
+        $this->json = $json;
         $this->scopeConfig = $scopeConfig;
     }
 
     /**
-     * @param $field
-     * @param $storeId
+     *  Get config value
+     *
+     * @param string $field
+     * @param null|int $storeId
      * @return mixed
      */
-    protected function getConfigValue($field, $storeId = null)
+    protected function getConfigValue(string $field, $storeId = null)
     {
         return $this->scopeConfig->getValue(
             $field,
@@ -46,38 +56,28 @@ class Config
     }
 
     /**
-     * @param $storeId
-     * @return mixed
+     * Get all config Data
+     *
+     * @return array
      */
-    public function getLabelColor($storeId = null)
+    public function getConfigData(): array
     {
-        return $this->getConfigValue(self::XML_PATH_LABEL_COLOR, $storeId);
+        if ($this->configData === []) {
+            $this->configData =  $this->getConfigValue(self::XML_PATH_BACK_TO_TOP);
+        }
+
+        return $this->configData;
     }
 
     /**
-     * @param $storeId
-     * @return mixed
+     * Convert config data to Json object
+     *
+     * @return string
      */
-    public function getBackgroundColor($storeId = null)
+    public function getJSONConfigData(): string
     {
-        return $this->getConfigValue(self::XML_PATH_BACKGROUND_COLOR, $storeId);
-    }
+        $data = $this->getConfigData();
 
-    /**
-     * @param $storeId
-     * @return mixed
-     */
-    public function getBorderColor($storeId = null)
-    {
-        return $this->getConfigValue(self::XML_PATH_BORDER_COLOR, $storeId);
-    }
-
-    /**
-     * @param $storeId
-     * @return mixed
-     */
-    public function getPosition($storeId = null)
-    {
-        return $this->getConfigValue(self::XML_PATH_POSITION, $storeId);
+        return $this->json->serialize($data);
     }
 }
