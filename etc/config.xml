@@ -33,6 +33,7 @@
                 <label>Back to top</label>
                 <label_color>#FAFAFA</label_color>
                 <background_color>#F44336</background_color>
+                <hover_background_color>#F44336</hover_background_color>
                 <border_color>#e0e0e0</border_color>
                 <position>bottom-right</position>
             </display>

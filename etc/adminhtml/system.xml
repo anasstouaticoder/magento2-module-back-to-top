@@ -44,13 +44,26 @@
                     <frontend_model>AnassTouatiCoder\Base\Block\Adminhtml\Form\ColorPicker</frontend_model>
                     <comment>You can customize background color</comment>
                 </field>
-                <field id="border_color" translate="label,comment" type="text" sortOrder="20" showInDefault="1"
+                <field id="hover_background_color" translate="label,comment" type="text" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Background Color</label>
+                    <frontend_model>AnassTouatiCoder\Base\Block\Adminhtml\Form\ColorPicker</frontend_model>
+                    <comment>You can customize background color</comment>
+                </field>
+                <field id="border_color" translate="label,comment" type="text" sortOrder="25" showInDefault="1"
                        showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Border Color</label>
                     <frontend_model>AnassTouatiCoder\Base\Block\Adminhtml\Form\ColorPicker</frontend_model>
                     <comment>You can customize border color</comment>
                 </field>
-                <field id="position" translate="label comment" type="select" sortOrder="40" showInDefault="1"
+                <field id="image" translate="label" type="AnassTouatiCoder\Base\Block\Adminhtml\Form\Element\SVGImage"
+                       sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>SVG image</label>
+                    <backend_model>AnassTouatiCoder\Base\Model\Config\Backend\SVGImage</backend_model>
+                    <frontend_model>\AnassTouatiCoder\Base\Block\Adminhtml\Form\SVGImage</frontend_model>
+                    <comment><![CDATA[Upload SVG image, the image will be displayed instead of text]]></comment>
+                </field>
+                <field id="position" translate="label comment" type="select" sortOrder="35" showInDefault="1"
                        showInWebsite="1" showInStore="1" canRestore="1">
                     <label><![CDATA[<strong>Position</strong>]]></label>
                     <source_model>AnassTouatiCoder\BackToTop\Model\Config\Source\Position</source_model>

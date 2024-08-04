@@ -25,13 +25,30 @@ class BackToTopButton {
     updateButton() {
         const { display } = this.config, position = display?.position;
 
-        this.button.innerHTML = display?.label || 'Back To Top';
+        if (display?.image) {
+            this.button.innerHTML = this.getImage(display.image);
+        } else {
+            this.button.innerHTML = display?.label || 'Back To Top';
+        }
+
         this.button.style.color = display?.label_color || '#FAFAFA';
         this.button.style.backgroundColor = display?.background_color || '#F44336';
         this.button.style.borderColor = display?.border_color || '#e0e0e0';
         this.button.style.display = 'inline';
         this.applyPosition(position);
+    }
 
+    getImage(svgContent) {
+        // Parse the SVG string and modify its size
+        const parser = new DOMParser();
+        const svgDoc = parser.parseFromString(svgContent, "image/svg+xml");
+        const svgElement = svgDoc.documentElement;
+        svgElement.setAttribute("width", "32");
+        svgElement.setAttribute("height", "32");
+
+        // Serialize the modified SVG back to a string
+        const serializer = new XMLSerializer();
+        return serializer.serializeToString(svgElement);
     }
 
     applyPosition(position) {
@@ -44,6 +61,18 @@ class BackToTopButton {
     }
 
     addButtonListeners() {
+        const { display } = this.config;
+        const hoverColor = display?.hover_background_color || '#D32F2F';
+        const originalBackgroundColor = this.button.style.backgroundColor;
+
+        this.button.addEventListener('mouseover', () => {
+            this.button.style.backgroundColor = hoverColor;
+        });
+
+        this.button.addEventListener('mouseout', () => {
+            this.button.style.backgroundColor = originalBackgroundColor;
+        });
+
         this.button.addEventListener('click', (event) => this.scrollToTop(event));
         window.addEventListener('scroll', () => this.toggleVisibility());
     }
