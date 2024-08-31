@@ -26,7 +26,7 @@ class BackToTopButton {
         const { display } = this.config, position = display?.position;
 
         if (display?.image) {
-            this.button.innerHTML = this.getImage(display.image);
+            this.button.innerHTML = this.getImage(display);
         } else {
             this.button.innerHTML = display?.label || 'Back To Top';
         }
@@ -38,14 +38,14 @@ class BackToTopButton {
         this.applyPosition(position);
     }
 
-    getImage(svgContent) {
+    getImage(display) {
         // Parse the SVG string and modify its size
         const parser = new DOMParser();
-        const svgDoc = parser.parseFromString(svgContent, "image/svg+xml");
-        const svgElement = svgDoc.documentElement;
-        svgElement.setAttribute("width", "32");
-        svgElement.setAttribute("height", "32");
-
+        const svgDoc = parser.parseFromString(display.image, "image/svg+xml");
+        const svgElement = svgDoc.documentElement, size = JSON.parse(display.image_size);
+        svgElement.setAttribute("width", size.width);
+        svgElement.setAttribute("height", size.height);
+        console.log(svgElement);
         // Serialize the modified SVG back to a string
         const serializer = new XMLSerializer();
         return serializer.serializeToString(svgElement);

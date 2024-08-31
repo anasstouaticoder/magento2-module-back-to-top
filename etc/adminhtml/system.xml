@@ -63,6 +63,14 @@
                     <frontend_model>\AnassTouatiCoder\Base\Block\Adminhtml\Form\SVGImage</frontend_model>
                     <comment><![CDATA[Upload SVG image, the image will be displayed instead of text]]></comment>
                 </field>
+                <field id="image_size" translate="label" type="text" sortOrder="32" showInDefault="1" showInWebsite="1"
+                       showInStore="1" canRestore="1">
+                    <label>Image SVG Size</label>
+                    <comment>Specify the width and height for the image SVG size.</comment>
+                    <backend_model>\AnassTouatiCoder\Base\Model\Config\Backend\Json</backend_model>
+                    <frontend_model>\AnassTouatiCoder\Base\Block\Adminhtml\Form\ImageSize</frontend_model>
+                    <comment>Default Value is 32 x 32</comment>
+                </field>
                 <field id="position" translate="label comment" type="select" sortOrder="35" showInDefault="1"
                        showInWebsite="1" showInStore="1" canRestore="1">
                     <label><![CDATA[<strong>Position</strong>]]></label>

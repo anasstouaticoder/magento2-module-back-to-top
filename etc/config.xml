@@ -18,23 +18,25 @@
                     <label><![CDATA[Full Action Name]]></label>
                     <required>1</required>
                 </item1>
-                <item1>
+                <item2>
                     <name>page_type</name>
                     <type>text</type>
                     <label><![CDATA[Page Type]]></label>
                     <required>2</required>
-                </item1>
+                </item2>
             </field_list>
             <field_name>custom pages to exclude</field_name>
         </execlude_custom_pages>
         <back_to_top>
             <general><enabled>1</enabled></general>
             <display>
+
                 <label>Back to top</label>
                 <label_color>#FAFAFA</label_color>
                 <background_color>#F44336</background_color>
                 <hover_background_color>#F44336</hover_background_color>
                 <border_color>#e0e0e0</border_color>
+                <image_size>{"width":"32","height":"32"}</image_size>
                 <position>bottom-right</position>
             </display>
             <pages>
