@@ -25,7 +25,7 @@ class BackToTopButton {
     updateButton() {
         const { display } = this.config, position = display?.position;
 
-        if (display?.image) {
+        if (display?.image !== null) {
             this.button.innerHTML = this.getImage(display);
         } else {
             this.button.innerHTML = display?.label || 'Back To Top';
@@ -45,7 +45,6 @@ class BackToTopButton {
         const svgElement = svgDoc.documentElement, size = JSON.parse(display.image_size);
         svgElement.setAttribute("width", size.width);
         svgElement.setAttribute("height", size.height);
-        console.log(svgElement);
         // Serialize the modified SVG back to a string
         const serializer = new XMLSerializer();
         return serializer.serializeToString(svgElement);
